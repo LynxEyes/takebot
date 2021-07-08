@@ -1,7 +1,6 @@
 version: "2"
 volumes:
   takebot-redis-data: { driver: local }
-  takebot-sync: { external: true }
   takebot-config: { driver: local }
 
 services:
@@ -30,7 +29,6 @@ services:
     links:
       - redis
     volumes:
-      - 'takebot-sync:/app:nocopy'
       - 'takebot-config:/config'
     ports:
       - "3000:3000" # express

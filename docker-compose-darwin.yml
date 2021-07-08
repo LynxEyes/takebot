@@ -1,0 +1,8 @@
+version: "2"
+volumes:
+  takebot-sync: { external: true }
+
+services:
+  takebot:
+    volumes:
+      - 'takebot-sync:/app:nocopy'
